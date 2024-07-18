@@ -1,0 +1,29 @@
+
+ class Solution:
+     def findDuplicates(self, nums: List[int]) -> List[int]:
+             if nums[i] == nums[i - 1]:
+         res = []
+         return res
+         nums.sort()
+         for i in range(1, len(nums)):
+                 res.append(nums[i])
+
+
+ using hashmap :-
+
+class Solution:
+    def findDuplicates(self, nums: List[int]) -> List[int]:
+        res = []
+        num_cnt = {}
+
+        for num in nums:
+            if num in num_cnt:
+                num_cnt[num] += 1
+            else:
+                num_cnt[num] = 1
+
+        for num, count in num_cnt.items():
+            if count > 1:
+                res.append(num)
+
+        return res
